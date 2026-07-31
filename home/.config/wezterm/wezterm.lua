@@ -24,17 +24,16 @@ config.window_padding = {
   bottom = 10,
 }
 
--- Migliora il riconoscimento di URL e percorsi
 config.hyperlink_rules = wezterm.default_hyperlink_rules()
 
--- Su Windows usa PowerShell 7.
--- Su macOS e Linux usa la shell predefinita dell'utente.
+-- PowerShell 7 su Windows; shell predefinita su macOS e Linux
 if wezterm.target_triple:find("windows") then
   config.default_prog = { "pwsh.exe", "-NoLogo" }
 end
 
 -- Scorciatoie portabili
 config.keys = {
+  -- Split orizzontale
   {
     key = "d",
     mods = "CMD",
@@ -44,14 +43,39 @@ config.keys = {
   },
   {
     key = "d",
+    mods = "CTRL|SHIFT",
+    action = wezterm.action.SplitHorizontal({
+      domain = "CurrentPaneDomain",
+    }),
+  },
+
+  -- Split verticale
+  {
+    key = "d",
     mods = "CMD|SHIFT",
     action = wezterm.action.SplitVertical({
       domain = "CurrentPaneDomain",
     }),
   },
   {
+    key = "e",
+    mods = "CTRL|SHIFT",
+    action = wezterm.action.SplitVertical({
+      domain = "CurrentPaneDomain",
+    }),
+  },
+
+  -- Chiude il pannello attivo
+  {
     key = "w",
     mods = "CMD",
+    action = wezterm.action.CloseCurrentPane({
+      confirm = true,
+    }),
+  },
+  {
+    key = "w",
+    mods = "CTRL|SHIFT",
     action = wezterm.action.CloseCurrentPane({
       confirm = true,
     }),
