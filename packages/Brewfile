@@ -1,0 +1,17 @@
+# Open-source, cross-platform JavaScript runtime environment
+brew "node"
+# Development kit for the Java programming language
+brew "openjdk"
+# Development kit for the Java programming language
+brew "openjdk@21"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.14"
+# Cross-shell prompt for astronauts
+brew "starship"
+# Desktop password and login vault
+cask "bitwarden"
+cask "font-jetbrains-mono-nerd-font"
+# Control your tools with a few keystrokes
+cask "raycast"
+# GPU-accelerated cross-platform terminal emulator and multiplexer
+cask "wezterm"
