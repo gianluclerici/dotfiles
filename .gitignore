@@ -1,0 +1,21 @@
+# macOS
+.DS_Store
+
+# Configurazioni specifiche del computer
+*.local
+.zshrc.local
+.zprofile.local
+
+# Segreti e credenziali
+home/.ssh/
+home/.aws/
+home/.config/gh/hosts.yml
+home/.config/gcloud/
+home/.config/op/
+home/.config/Bitwarden/
+
+# File temporanei
+*.tmp
+*.bak
+
+

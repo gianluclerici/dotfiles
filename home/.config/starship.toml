@@ -1,0 +1,52 @@
+add_newline = false
+command_timeout = 1000
+
+format = """
+$directory\
+$git_branch\
+$git_status\
+$dotnet\
+$nodejs\
+$python\
+$java\
+$cmd_duration\
+$line_break\
+$character"""
+
+[directory]
+style = "bold blue"
+truncation_length = 4
+truncate_to_repo = true
+
+[git_branch]
+symbol = "git:"
+style = "bold purple"
+format = "[$symbol$branch]($style) "
+
+[git_status]
+style = "bold red"
+format = "[$all_status$ahead_behind]($style)"
+
+[dotnet]
+symbol = ".NET "
+format = "[$symbol($version)]($style) "
+
+[nodejs]
+symbol = "Node "
+format = "[$symbol($version)]($style) "
+
+[python]
+symbol = "Python "
+format = "[$symbol$pyenv_prefix($version)]($style) "
+
+[java]
+symbol = "Java "
+format = "[$symbol($version)]($style) "
+
+[cmd_duration]
+min_time = 1000
+format = "[$duration](yellow) "
+
+[character]
+success_symbol = "[❯](bold green)"
+error_symbol = "[❯](bold red)"
