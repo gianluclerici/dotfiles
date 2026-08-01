@@ -65,7 +65,7 @@ Clonare il repository in `~/Projects/dotfiles`:
 
 ```bash
 mkdir -p ~/Projects
-git clone URL_REPOSITORY ~/Projects/dotfiles
+git clone git@github.com:gianluclerici/dotfiles.git ~/Projects/dotfiles
 cd ~/Projects/dotfiles
 ```
 
@@ -132,7 +132,7 @@ per la propria distribuzione.
 
 ```bash
 mkdir -p ~/Projects
-git clone URL_REPOSITORY ~/Projects/dotfiles
+git clone git@github.com:gianluclerici/dotfiles.git ~/Projects/dotfiles
 cd ~/Projects/dotfiles
 ./scripts/bootstrap.sh --dry-run
 ./scripts/bootstrap.sh
@@ -187,7 +187,7 @@ Da PowerShell 7:
 
 ```powershell
 New-Item -ItemType Directory -Path "$HOME\Projects" -Force | Out-Null
-git clone URL_REPOSITORY "$HOME\Projects\dotfiles"
+git clone git@github.com:gianluclerici/dotfiles.git "$HOME\Projects\dotfiles"
 Set-Location "$HOME\Projects\dotfiles"
 ```
 
