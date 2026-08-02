@@ -255,6 +255,93 @@ l'operazione chiude la relativa scheda.
 Le normali scorciatoie non ridefinite da questo repository continuano a essere
 gestite dalle impostazioni predefinite di WezTerm.
 
+## Uso di tmux
+
+tmux mantiene terminali, programmi e processi attivi anche quando si chiude
+WezTerm o si perde una connessione SSH. Questo repository installa tmux su
+macOS tramite il `Brewfile`, ma non ne modifica le scorciatoie predefinite.
+
+### Installazione su un altro dispositivo
+
+Dopo aver clonato il repository seguendo il setup della propria piattaforma, su
+macOS eseguire:
+
+```bash
+cd ~/Projects/dotfiles
+brew bundle install --file=packages/Brewfile
+tmux -V
+```
+
+Su Linux installarlo con il gestore di pacchetti della distribuzione:
+
+```bash
+# Debian e Ubuntu
+sudo apt update
+sudo apt install tmux
+
+# Fedora
+sudo dnf install tmux
+
+# Arch Linux
+sudo pacman -S tmux
+```
+
+tmux non funziona direttamente in PowerShell. Su Windows installarlo e usarlo
+all'interno di WSL, per esempio con Ubuntu:
+
+```powershell
+wsl --install -d Ubuntu
+```
+
+Poi, nel terminale Ubuntu:
+
+```bash
+sudo apt update
+sudo apt install tmux
+```
+
+### Avvio dal terminale
+
+Appena aperto il terminale, questo comando crea una sessione chiamata `main` o
+si ricollega alla stessa sessione se esiste già:
+
+```bash
+tmux new-session -A -s main
+```
+
+I comandi principali per gestire le sessioni sono:
+
+| Comando | Effetto |
+|---|---|
+| `tmux` | Crea una nuova sessione |
+| `tmux new -s lavoro` | Crea una sessione chiamata `lavoro` |
+| `tmux ls` | Elenca le sessioni disponibili |
+| `tmux attach -t lavoro` | Riapre la sessione `lavoro` |
+| `tmux kill-session -t lavoro` | Termina la sessione `lavoro` |
+
+### Scorciatoie principali
+
+Le scorciatoie iniziano con il prefisso `Ctrl B`: premere insieme `Ctrl` e `B`,
+rilasciarli, quindi premere il tasto indicato.
+
+| Scorciatoia | Effetto |
+|---|---|
+| `Ctrl B`, poi `d` | Scollega la sessione senza chiuderla |
+| `Ctrl B`, poi `c` | Crea una nuova finestra |
+| `Ctrl B`, poi `n` | Passa alla finestra successiva |
+| `Ctrl B`, poi `p` | Passa alla finestra precedente |
+| `Ctrl B`, poi `0`...`9` | Passa alla finestra con quel numero |
+| `Ctrl B`, poi `%` | Divide il terminale in pannelli affiancati |
+| `Ctrl B`, poi `"` | Divide il terminale in pannelli sovrapposti |
+| `Ctrl B`, poi una freccia | Passa al pannello nella direzione scelta |
+| `Ctrl B`, poi `x` | Chiude il pannello attivo dopo conferma |
+| `Ctrl B`, poi `[` | Entra nella modalità di scorrimento; `q` per uscire |
+| `Ctrl B`, poi `?` | Mostra tutte le scorciatoie disponibili |
+
+Per uscire da una shell dentro tmux usare normalmente `exit`. L'ultimo pannello
+chiuso termina anche la sessione; `Ctrl B`, poi `d`, invece la lascia attiva e
+permette di recuperarla in seguito con `tmux attach`.
+
 ## Comandi della shell
 
 Su macOS e Linux:
@@ -318,4 +405,3 @@ Ogni esecuzione che incontra file preesistenti li sposta sotto una cartella come
 Per ripristinare manualmente un file, rimuovere prima il relativo collegamento e
 ricopiare il file desiderato dal backup. Controllare sempre il percorso prima di
 eseguire questa operazione.
-
