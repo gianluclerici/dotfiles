@@ -8,9 +8,15 @@ brew "openjdk@21"
 brew "python@3.14"
 # Cross-shell prompt for astronauts
 brew "starship"
+# Terminal multiplexer
+brew "tmux"
 # Desktop password and login vault
 cask "bitwarden"
+# OpenAI's coding agent that runs in your terminal
+cask "codex"
 cask "font-jetbrains-mono-nerd-font"
+# Whisper dictation/transcription app
+cask "opensuperwhisper"
 # Control your tools with a few keystrokes
 cask "raycast"
 # GPU-accelerated cross-platform terminal emulator and multiplexer
