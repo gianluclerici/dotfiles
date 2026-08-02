@@ -318,3 +318,4 @@ Ogni esecuzione che incontra file preesistenti li sposta sotto una cartella come
 Per ripristinare manualmente un file, rimuovere prima il relativo collegamento e
 ricopiare il file desiderato dal backup. Controllare sempre il percorso prima di
 eseguire questa operazione.
+

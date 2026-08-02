@@ -3,7 +3,10 @@ local config = wezterm.config_builder()
 
 -- Aspetto condiviso
 config.color_scheme = "Catppuccin Mocha"
-config.font = wezterm.font("JetBrainsMono Nerd Font")
+config.font = wezterm.font_with_fallback({
+  "JetBrains Mono",
+  "Symbols Nerd Font Mono",
+})
 config.font_size = 14
 config.window_background_opacity = 0.96
 config.window_decorations = "RESIZE"
