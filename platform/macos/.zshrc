@@ -3,3 +3,8 @@ if /usr/libexec/java_home -v 21 >/dev/null 2>&1; then
   export JAVA_HOME=$(/usr/libexec/java_home -v 21)
   export PATH="$JAVA_HOME/bin:$PATH"
 fi
+
+# Flutter SDK su macOS
+if [[ -d "$HOME/SDKs/flutter/bin" && ":$PATH:" != *":$HOME/SDKs/flutter/bin:"* ]]; then
+  export PATH="$HOME/SDKs/flutter/bin:$PATH"
+fi

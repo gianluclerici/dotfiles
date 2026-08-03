@@ -21,3 +21,5 @@ cask "opensuperwhisper"
 cask "raycast"
 # GPU-accelerated cross-platform terminal emulator and multiplexer
 cask "wezterm"
+# Tools for building Android applications
+  cask "android-studio"
