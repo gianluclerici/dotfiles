@@ -8,3 +8,18 @@ fi
 if [[ -d "$HOME/SDKs/flutter/bin" && ":$PATH:" != *":$HOME/SDKs/flutter/bin:"* ]]; then
   export PATH="$HOME/SDKs/flutter/bin:$PATH"
 fi
+
+# Android SDK su macOS
+if [[ -d "$HOME/Library/Android/sdk" ]]; then
+  export ANDROID_HOME="$HOME/Library/Android/sdk"
+
+  for android_path in \
+    "$ANDROID_HOME/platform-tools" \
+    "$ANDROID_HOME/emulator" \
+    "$ANDROID_HOME/cmdline-tools/latest/bin"; do
+    if [[ -d "$android_path" && ":$PATH:" != *":$android_path:"* ]]; then
+      export PATH="$android_path:$PATH"
+    fi
+  done
+  unset android_path
+fi

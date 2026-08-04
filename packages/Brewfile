@@ -1,3 +1,5 @@
+# Dependency manager for Cocoa projects
+brew "cocoapods"
 # Open-source, cross-platform JavaScript runtime environment
 brew "node"
 # Development kit for the Java programming language
@@ -10,16 +12,18 @@ brew "python@3.14"
 brew "starship"
 # Terminal multiplexer
 brew "tmux"
+# Tools for building Android applications
+cask "android-studio"
 # Desktop password and login vault
 cask "bitwarden"
 # OpenAI's coding agent that runs in your terminal
 cask "codex"
 cask "font-jetbrains-mono-nerd-font"
+# Web browser
+cask "google-chrome"
 # Whisper dictation/transcription app
 cask "opensuperwhisper"
 # Control your tools with a few keystrokes
 cask "raycast"
 # GPU-accelerated cross-platform terminal emulator and multiplexer
 cask "wezterm"
-# Tools for building Android applications
-  cask "android-studio"
